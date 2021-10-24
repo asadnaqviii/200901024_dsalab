@@ -1,0 +1,11 @@
+from collections import deque
+
+stack = deque()
+a =deque()
+palindromecheck = input("Enter the string: ")
+for x in palindromecheck:
+   stack.append(x)
+print(stack)
+while len(stack)!=0:
+   a.append(stack.pop())
+print(a)
