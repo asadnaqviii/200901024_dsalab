@@ -1,1 +1,45 @@
+import numpy as np
+class queue:
+    
+    def _init_ (self , s):
+        
+        self.s = s
+        self.elements = np.empty([self.s])
+        self.front=0
+        self.rear = 0
+        self.size = s
+    def queue_Enqueue(self,data):
+        
+        if (self.size == self.rear):
+            
+            return "Queue is full (Overflow)"
+        else:
+            self.elements[self.rear] = data
+            self.rear = self.rear +1
 
+    def queue_dequeue(self):
+        if (self.front == self.rear):
+            return "Queue is Empty (Underflow)" 
+        else:
+            self.front = self.front + 1
+  
+    def queue_display(self):
+        if(self.front == self.rear):
+            return "Queue is empty underflow "
+        for x in self.elements:
+            print(x)
+
+    def queue_Front(self):
+        if(self.front == self.rear):
+            print("Queue is Empty underflow")
+        print("Front Element is:",
+          self.queue[self.front])
+q = queue(4)
+q.queue_dequeue()
+q.queue_Enqueue(53)
+q.queue_Enqueue(4)
+q.queue_Enqueue(133)
+q.queue_Enqueue(5)
+q.queue_Enqueue(64)
+q.queue_Enqueue(2)
+q.queue_Enqueue(233)
