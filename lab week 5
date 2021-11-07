@@ -1,0 +1,60 @@
+class node:
+  def _init_(self,data=None):#does not make it none if data is provided
+    self.data=data
+    self.next=None
+
+
+class linkedList:
+  def _init_(self):
+    self.head=node()#create object of node at head
+    count=0
+    #print("Head is initialized")#check
+  #append function
+  def insertTail(self,newData):#take new data as argument
+    newNode=node(newData)#create new node using new data
+    cur=self.head#temp variable
+    while (cur.next!=None):#at the end node add new node
+      cur=cur.next
+    cur.next=newNode
+
+  #insert at head
+  def insertFirst(self,newData):
+    temp=node()#create node to store current head
+    temp.data=self.head.data#store data of current head node in temp
+    temp.next=self.head.next#" pointer of "
+    self.head.data=newData#replace head with new head
+    self.head.next=temp#replace head pointer with temp/prev head
+  
+ 
+  def insert(self,after,newData):
+    newNode=node(newData)#store new data in a node
+    cur=self.head#temp
+    while cur.next!=None:#until end of linked list
+       if (cur.data==after):#if the after data is same as current data
+         newNode.next=cur.next#then insert new node
+         cur.next=newNode
+         print("inserted")#check
+       cur=cur.next#next check ptr
+  
+
+  def delete1(self):
+    cur=self.head#temp
+    while (cur.next.next)
+      secondLastNode=cur.next
+      cur=cur.next
+    cur.next=None
+
+
+  def display(self):#display linked list
+     count=0
+     cur=self.head
+     dis=[]#store linked list in list
+     while cur.next!=None:#until end of list
+       cur=cur.next
+       dis.append(cur.data)
+       count=count+1#increment size
+     print(dis) 
+     print("Size of Linked List is ", count)
+
+#CREATING OBJECT AND CALLING
+L=linkedList()
